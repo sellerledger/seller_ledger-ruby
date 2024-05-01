@@ -4,11 +4,11 @@
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add seller_ledger
+    $ bundle add seller_ledger-ruby
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install seller_ledger
+    $ gem install seller_ledger-ruby
 
 ## Usage
 
