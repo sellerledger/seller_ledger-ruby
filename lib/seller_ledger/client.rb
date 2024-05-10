@@ -33,8 +33,8 @@ module SellerLedger
       request(:put, url, params).body
     end
 
-    def delete(url)
-      request(:delete, url).body
+    def delete(url, params = {})
+      request(:delete, url, params).body
     end
 
     def request(method, url, params)
