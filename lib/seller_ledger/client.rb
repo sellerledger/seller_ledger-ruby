@@ -2,7 +2,12 @@
 
 require "faraday"
 require "json"
+require "seller_ledger/client/accounts"
+require "seller_ledger/client/business"
 require "seller_ledger/client/categories"
+require "seller_ledger/client/connections"
+require "seller_ledger/client/connection_transactions"
+require "seller_ledger/client/inventory"
 require "seller_ledger/client/transactions"
 require "seller_ledger/client/mileage_transactions"
 require "seller_ledger/client/income_transactions"
@@ -10,7 +15,12 @@ require "seller_ledger/client/expense_transactions"
 
 module SellerLedger
   class Client
+    include SellerLedger::Client::Accounts
+    include SellerLedger::Client::Business
     include SellerLedger::Client::Categories
+    include SellerLedger::Client::Connections
+    include SellerLedger::Client::ConnectionTransactions
+    include SellerLedger::Client::Inventory
     include SellerLedger::Client::Transactions
     include SellerLedger::Client::MileageTransactions
     include SellerLedger::Client::IncomeTransactions
@@ -40,7 +50,8 @@ module SellerLedger
     def request(method, url, params)
       response = agent.send(method, url, params)
       raise SellerLedger::Errors::Unauthenticated.new if response.status == 401
-      raise SellerLedger::Errors::Generic.new(response.body["error"]) if response.body["error"].present?
+      error = response.body["error"]
+      raise SellerLedger::Errors::Generic.new(error) if error != nil && error != ""
       response
     end
 
