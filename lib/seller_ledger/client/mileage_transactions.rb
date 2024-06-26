@@ -16,14 +16,17 @@ module SellerLedger
       end
 
       def update_mileage_transaction(id, params)
+        validate(id)
         put("/v1/transactions/mileage/#{id}", params)
       end
 
       def get_mileage_transaction(id)
+        validate(id)
         get("/v1/transactions/mileage/#{id}")
       end
 
       def delete_mileage_transaction(id)
+        validate(id)
         delete("/v1/transactions/mileage/#{id}")
       end
     end

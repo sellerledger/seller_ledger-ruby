@@ -16,14 +16,17 @@ module SellerLedger
       end
 
       def update_income_transaction(id, params)
+        validate(id)
         put("/v1/transactions/income/#{id}", params)
       end
 
       def get_income_transaction(id)
+        validate(id)
         get("/v1/transactions/income/#{id}")
       end
 
       def delete_income_transaction(id)
+        validate(id)
         delete("/v1/transactions/income/#{id}")
       end
     end

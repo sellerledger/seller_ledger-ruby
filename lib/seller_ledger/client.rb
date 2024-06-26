@@ -77,5 +77,9 @@ module SellerLedger
         f.response :json
       end
     end
+
+    def validate(value)
+      raise SellerLedger::Errors::ValueError.new if value == nil || value == ""
+    end
   end
 end

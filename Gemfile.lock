@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    seller_ledger-ruby (1.0.0)
+    seller_ledger-ruby (1.2.0)
       faraday
       json
 

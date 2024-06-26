@@ -16,10 +16,12 @@ module SellerLedger
       end
 
       def get_connection(id)
+        validate(id)
         get("/v1/connections/#{id}")
       end
 
       def delete_connection(id)
+        validate(id)
         delete("/v1/connections/#{id}")
       end
     end

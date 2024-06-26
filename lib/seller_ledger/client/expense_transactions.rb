@@ -16,14 +16,17 @@ module SellerLedger
       end
 
       def update_expense_transaction(id, params)
+        validate(id)
         put("/v1/transactions/expenses/#{id}", params)
       end
 
       def get_expense_transaction(id)
+        validate(id)
         get("/v1/transactions/expenses/#{id}")
       end
 
       def delete_expense_transaction(id)
+        validate(id)
         delete("/v1/transactions/expenses/#{id}")
       end
     end

@@ -16,10 +16,12 @@ module SellerLedger
       end
 
       def get_inventory_purchase(id)
+        validate(id)
         get("/v1/inventory/purchases/#{id}")
       end
 
       def delete_inventory_purchase(id)
+        validate(id)
         delete("/v1/inventory/purchases/#{id}")
       end
     end

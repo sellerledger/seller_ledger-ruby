@@ -12,6 +12,7 @@ module SellerLedger
       end
 
       def get_transaction(id)
+        validate(id)
         get("/v1/transactions/#{id}")
       end
     end

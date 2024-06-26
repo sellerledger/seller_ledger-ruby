@@ -12,10 +12,12 @@ module SellerLedger
       end
 
       def get_account(id)
+        validate(id)
         get("/v1/accounts/#{id}")
       end
 
       def list_account_transactions(id, params = {})
+        validate(id)
         paginated_request(
           "/v1/accounts/#{id}/transactions",
           params,
@@ -24,6 +26,7 @@ module SellerLedger
       end
 
       def list_account_entries(id, params = {})
+        validate(id)
         paginated_request(
           "/v1/accounts/#{id}/entries",
           params,

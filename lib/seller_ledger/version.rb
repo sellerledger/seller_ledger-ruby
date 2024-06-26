@@ -3,7 +3,7 @@
 module SellerLedger
   MAJOR = 1
 
-  MINOR = 1
+  MINOR = 2
 
   PATCH = 0
 
