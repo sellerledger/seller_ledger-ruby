@@ -27,7 +27,7 @@ module SellerLedger
         paginated_request(
           "/v1/accounts/#{id}/entries",
           params,
-          "transactions"
+          "entries"
         )
       end
     end

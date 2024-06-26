@@ -3,7 +3,7 @@
 module SellerLedger
   class Client
     module Business
-      def get_business(id)
+      def get_business
         get("/v1/business")
       end
     end

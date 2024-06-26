@@ -3,7 +3,7 @@
 module SellerLedger
   class Client
     module Inventory
-      def list_inventory_purchases(params)
+      def list_inventory_purchases(params = {})
         paginated_request(
           "/v1/inventory/purchases",
           params,

@@ -15,10 +15,6 @@ module SellerLedger
         post("/v1/connections", params)
       end
 
-      def update_connection(id, params)
-        put("/v1/connections/#{id}", params)
-      end
-
       def get_connection(id)
         get("/v1/connections/#{id}")
       end
