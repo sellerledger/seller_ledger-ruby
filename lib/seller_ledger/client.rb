@@ -8,10 +8,8 @@ require "seller_ledger/client/categories"
 require "seller_ledger/client/connections"
 require "seller_ledger/client/connection_transactions"
 require "seller_ledger/client/inventory"
-require "seller_ledger/client/transactions"
 require "seller_ledger/client/mileage_transactions"
-require "seller_ledger/client/income_transactions"
-require "seller_ledger/client/expense_transactions"
+require "seller_ledger/client/transactions"
 
 module SellerLedger
   class Client
@@ -21,10 +19,8 @@ module SellerLedger
     include SellerLedger::Client::Connections
     include SellerLedger::Client::ConnectionTransactions
     include SellerLedger::Client::Inventory
-    include SellerLedger::Client::Transactions
     include SellerLedger::Client::MileageTransactions
-    include SellerLedger::Client::IncomeTransactions
-    include SellerLedger::Client::ExpenseTransactions
+    include SellerLedger::Client::Transactions
 
     def initialize(token:, url: "https://api.sellerledger.com")
       @token = token
